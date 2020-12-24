@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/the-game-of-metropolitical-war/static/css/main.442adfa6.chunk.css",
-    "main.js": "/the-game-of-metropolitical-war/static/js/main.41c6f3b9.chunk.js",
-    "main.js.map": "/the-game-of-metropolitical-war/static/js/main.41c6f3b9.chunk.js.map",
+    "main.js": "/the-game-of-metropolitical-war/static/js/main.bca10ebd.chunk.js",
+    "main.js.map": "/the-game-of-metropolitical-war/static/js/main.bca10ebd.chunk.js.map",
     "runtime-main.js": "/the-game-of-metropolitical-war/static/js/runtime-main.8a6a517b.js",
     "runtime-main.js.map": "/the-game-of-metropolitical-war/static/js/runtime-main.8a6a517b.js.map",
     "static/js/2.ed68a76e.chunk.js": "/the-game-of-metropolitical-war/static/js/2.ed68a76e.chunk.js",
@@ -11,7 +11,7 @@
     "static/css/main.442adfa6.chunk.css.map": "/the-game-of-metropolitical-war/static/css/main.442adfa6.chunk.css.map",
     "static/js/2.ed68a76e.chunk.js.LICENSE.txt": "/the-game-of-metropolitical-war/static/js/2.ed68a76e.chunk.js.LICENSE.txt",
     "static/media/beep-1.f2a116ee.ogg": "/the-game-of-metropolitical-war/static/media/beep-1.f2a116ee.ogg",
-    "static/media/click-1.9c59379a.wav": "/the-game-of-metropolitical-war/static/media/click-1.9c59379a.wav",
+    "static/media/click-1.b75f214e.wav": "/the-game-of-metropolitical-war/static/media/click-1.b75f214e.wav",
     "static/media/click-2.91940e3f.wav": "/the-game-of-metropolitical-war/static/media/click-2.91940e3f.wav",
     "static/media/click-3.026622a2.wav": "/the-game-of-metropolitical-war/static/media/click-3.026622a2.wav",
     "static/media/click-4.40e61f3c.wav": "/the-game-of-metropolitical-war/static/media/click-4.40e61f3c.wav",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.8a6a517b.js",
     "static/js/2.ed68a76e.chunk.js",
     "static/css/main.442adfa6.chunk.css",
-    "static/js/main.41c6f3b9.chunk.js"
+    "static/js/main.bca10ebd.chunk.js"
   ]
 }
