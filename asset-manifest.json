@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/the-game-of-metropolitical-war/static/css/main.442adfa6.chunk.css",
+    "main.js": "/the-game-of-metropolitical-war/static/js/main.5fc3daf6.chunk.js",
+    "main.js.map": "/the-game-of-metropolitical-war/static/js/main.5fc3daf6.chunk.js.map",
+    "runtime-main.js": "/the-game-of-metropolitical-war/static/js/runtime-main.abdc7e59.js",
+    "runtime-main.js.map": "/the-game-of-metropolitical-war/static/js/runtime-main.abdc7e59.js.map",
+    "static/js/2.89256c57.chunk.js": "/the-game-of-metropolitical-war/static/js/2.89256c57.chunk.js",
+    "static/js/2.89256c57.chunk.js.map": "/the-game-of-metropolitical-war/static/js/2.89256c57.chunk.js.map",
+    "index.html": "/the-game-of-metropolitical-war/index.html",
+    "static/css/main.442adfa6.chunk.css.map": "/the-game-of-metropolitical-war/static/css/main.442adfa6.chunk.css.map",
+    "static/js/2.89256c57.chunk.js.LICENSE.txt": "/the-game-of-metropolitical-war/static/js/2.89256c57.chunk.js.LICENSE.txt",
+    "static/media/beep-1.f2a116ee.ogg": "/the-game-of-metropolitical-war/static/media/beep-1.f2a116ee.ogg",
+    "static/media/click-1.9c59379a.wav": "/the-game-of-metropolitical-war/static/media/click-1.9c59379a.wav",
+    "static/media/click-2.91940e3f.wav": "/the-game-of-metropolitical-war/static/media/click-2.91940e3f.wav",
+    "static/media/click-3.026622a2.wav": "/the-game-of-metropolitical-war/static/media/click-3.026622a2.wav",
+    "static/media/click-4.40e61f3c.wav": "/the-game-of-metropolitical-war/static/media/click-4.40e61f3c.wav",
+    "static/media/click-5.7b7921e7.wav": "/the-game-of-metropolitical-war/static/media/click-5.7b7921e7.wav",
+    "static/media/click-6.ba453eb3.wav": "/the-game-of-metropolitical-war/static/media/click-6.ba453eb3.wav",
+    "static/media/explosion-truck.f9dfd606.wav": "/the-game-of-metropolitical-war/static/media/explosion-truck.f9dfd606.wav",
+    "static/media/explosion.baf5f0f6.wav": "/the-game-of-metropolitical-war/static/media/explosion.baf5f0f6.wav",
+    "static/media/interface-chirp-close.12247bdc.wav": "/the-game-of-metropolitical-war/static/media/interface-chirp-close.12247bdc.wav",
+    "static/media/interface-chirp-open.43a7be55.wav": "/the-game-of-metropolitical-war/static/media/interface-chirp-open.43a7be55.wav",
+    "static/media/step-1.0af06b31.wav": "/the-game-of-metropolitical-war/static/media/step-1.0af06b31.wav",
+    "static/media/step-2.d0123c87.wav": "/the-game-of-metropolitical-war/static/media/step-2.d0123c87.wav",
+    "static/media/street.97a9b371.mp3": "/the-game-of-metropolitical-war/static/media/street.97a9b371.mp3",
+    "static/media/water.7eadf9dd.wav": "/the-game-of-metropolitical-war/static/media/water.7eadf9dd.wav"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abdc7e59.js",
+    "static/js/2.89256c57.chunk.js",
+    "static/css/main.442adfa6.chunk.css",
+    "static/js/main.5fc3daf6.chunk.js"
+  ]
+}
