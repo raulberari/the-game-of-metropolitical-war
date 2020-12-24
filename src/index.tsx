@@ -15,7 +15,14 @@ import {
 } from "./Insurgent";
 import { Game, Hegemon, Insurgent } from "./types";
 
-console.log(process.env.PUBLIC_URL);
+//@ts-ignore
+import backgroundMusicAudio from "./sounds/tears-in-rain.mp3";
+const backgroundMusic = new Audio(backgroundMusicAudio);
+backgroundMusic.volume = 0.4;
+backgroundMusic.preload = "auto";
+backgroundMusic.loop = true;
+backgroundMusic.autoplay = true;
+
 const renderBoard = (config: any) => {
   const cellToColor: Record<number, string> = {
     0: "rgb(255, 255, 255)",
@@ -44,6 +51,8 @@ const renderBoard = (config: any) => {
 
   const boardDiv = document.getElementById("board")!;
   boardDiv.appendChild(gameContainer);
+  // Muzica maestre
+  backgroundMusic.play();
 
   // Render board text
   for (const location of config.locations) {
