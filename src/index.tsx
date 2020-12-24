@@ -15,6 +15,7 @@ import {
 } from "./Insurgent";
 import { Game, Hegemon, Insurgent } from "./types";
 
+console.log(process.env.PUBLIC_URL);
 const renderBoard = (config: any) => {
   const cellToColor: Record<number, string> = {
     0: "rgb(255, 255, 255)",

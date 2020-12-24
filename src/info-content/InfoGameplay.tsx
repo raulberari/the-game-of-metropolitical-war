@@ -17,7 +17,10 @@ export const InfoGameplay = () => {
       <h2>Hex Types</h2>The map is composed of four different types of hexes:
       <br />
       <div className="hexDescription">
-        <img className="hexImage" src="images/hex-land.png"></img>
+        <img
+          className="hexImage"
+          src={process.env.PUBLIC_URL + "/images/hex-land.png"}
+        ></img>
         <p>
           <b>Land</b> hex, accessible to the{" "}
           <mark className="glowOrange" id="markInsurgent">
@@ -72,7 +75,7 @@ export const InfoGameplay = () => {
           </mark>{" "}
         </p>
       </div>
-      <h2>Movement</h2>
+      <h2>Movement & Attack</h2>
       The{" "}
       <mark className="glowOrange" id="markInsurgent">
         Insurgents
@@ -82,7 +85,7 @@ export const InfoGameplay = () => {
         Hegemon
       </mark>{" "}
       plays "Chess" by moving on the hexes. Insurgents have three moves, which
-      can be consumed
+      can be spent by either going
       <div id="generalMovement">
         <div className="generalMovementExample">
           <img
@@ -94,7 +97,7 @@ export const InfoGameplay = () => {
         <div className="generalMovementExample">
           <img
             className="generalMovementImage"
-            src="images/hegemon-movement.png"
+            src="/images/hegemon-movement.png"
           ></img>
           Hegemon Movement
         </div>
