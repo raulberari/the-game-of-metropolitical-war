@@ -1,0 +1,309 @@
+{
+  "title": "NEW YORK CITY",
+  "year": "2044",
+  "height": 30,
+  "width": 20,
+  "insurgentMoves": 3,
+  "hegemonMoves": 1,
+  "startInsurgents": 4,
+  "startHegemons": 6,
+  "insurgentsToDie": 20,
+  "hegemonsToDie": 6,
+  "infoContent": "NYC has swelled to over 50,000 people per km<sup>2</sup>, a swarming megacity of 40 million. It's been 18 months since the NY Energy Dpt. switched its production to petrol by redeploying oil pumps, following a highly coordinated <mark class='glowOrange' id='markInsurgent'>Insurgent</mark> attack that has destroyed a large part of their dams. The inland sea spanning the South-Western part of the state has flooded the adjacent municipalities, pushing refugees every day into the crowded complexes.<img class='textImage' src='/images/visuals/oil-drills-2.jpg'></img>In 2032, the metropolitan area zoning commitee banned the existence of buildings smaller than 150ft, citing density concerns. By 2037, all individual households have been razed and replaced with hyper-dense towers, pierced by high-speed rail viaducts.<img class='textImage' src='/images/visuals/chongqing-3.jpg'></img>The <mark class='glowWhite' id='markHegemon'>Hegemon</mark> represents a slow but powerful city-state power on a continuous mission of pacifying the 'feral' city that has grown outside its control. It has already re-established its power over the municipal waters, after the highly destructive offshore rig terrorist attack proved its weakness.<img class='textImage' src='/images/visuals/offshore-2.png'></img>",
+  "locations": [
+    {
+      "name": "Upper East Side",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "190px",
+      "left": "260px"
+    },
+    {
+      "name": "Central Park",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "300px",
+      "left": "50px"
+    },
+    {
+      "name": "FDR Drive",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(270deg)",
+      "top": "200px",
+      "left": "420px"
+    },
+    {
+      "name": "2nd Ave Seawall",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(270deg)",
+      "top": "550px",
+      "left": "270px"
+    },
+    {
+      "name": "Hudson Wall",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(270deg)",
+      "top": "1120px",
+      "left": "-15px"
+    },
+    {
+      "name": "Midtown",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "710px",
+      "left": "90px"
+    },
+    {
+      "name": "East Village",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "1305px",
+      "left": "380px"
+    },
+    {
+      "name": "Lowlands",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "1860px",
+      "left": "210px"
+    },
+    {
+      "name": "Manhattan",
+      "fontSize": "32px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "940px",
+      "left": "150px"
+    },
+    {
+      "name": "Holland Pool",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(0deg)",
+      "top": "1410px",
+      "left": "40px"
+    },
+    {
+      "name": "Manhattan Br",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(30deg)",
+      "top": "1770px",
+      "left": "460px"
+    },
+    {
+      "name": "Brooklyn Br",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(30deg)",
+      "top": "1880px",
+      "left": "410px"
+    },
+    {
+      "name": "Williamsburg Br",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(0deg)",
+      "top": "1475px",
+      "left": "690px"
+    },
+    {
+      "name": "Williamsburg",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "1370px",
+      "left": "880px"
+    },
+    {
+      "name": "Brooklyn",
+      "fontSize": "32px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "1140px",
+      "left": "880px"
+    },
+    {
+      "name": "Greenpoint",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "990px",
+      "left": "800px"
+    },
+    {
+      "name": "Navy Bay",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(0deg)",
+      "top": "1750px",
+      "left": "800px"
+    },
+    {
+      "name": "Bed-Stuy",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "1930px",
+      "left": "990px"
+    },
+    {
+      "name": "The Heights",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "2030px",
+      "left": "650px"
+    },
+    {
+      "name": "Brooklyn-Queens Expy",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(270deg)",
+      "top": "1250px",
+      "left": "960px"
+    },
+    {
+      "name": "East River",
+      "fontSize": "26px",
+      "color": "white",
+      "rotate": "rotate(270deg)",
+      "top": "960px",
+      "left": "580px"
+    },
+    {
+      "name": "Queens-Midtown Expy",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(330deg)",
+      "top": "750px",
+      "left": "630px"
+    },
+    {
+      "name": "Newtown Estuary",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(330deg)",
+      "top": "800px",
+      "left": "680px"
+    },
+    {
+      "name": "Queens",
+      "fontSize": "32px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "590px",
+      "left": "1010px"
+    },
+    {
+      "name": "Roosevelt Strand",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(270deg)",
+      "top": "220px",
+      "left": "510px"
+    },
+    {
+      "name": "Long Island City",
+      "fontSize": "20px",
+      "color": "black",
+      "rotate": "rotate(0deg)",
+      "top": "260px",
+      "left": "750px"
+    },
+    {
+      "name": "Queensboro Br",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(0deg)",
+      "top": "435px",
+      "left": "455px"
+    },
+    {
+      "name": "Queens Blvd",
+      "fontSize": "20px",
+      "color": "white",
+      "rotate": "rotate(0deg)",
+      "top": "470px",
+      "left": "700px"
+    },
+    {
+      "name": "Queens-Northern Expy",
+      "fontSize": "18px",
+      "color": "white",
+      "rotate": "rotate(330deg)",
+      "top": "355px",
+      "left": "850px"
+    }
+  ],
+  "board": [
+    [0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 0],
+    [0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 0],
+    [0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 0],
+    [0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 3, -1, 3, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 3, -1, 2, -1, 2, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 2, -1, 2, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 2, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 2, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 2, -1, 1, -1, 1, -1, 0, -1, 2],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 2, -1, 1, -1, 1, -1, 1, -1, 2, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 1, -1, 0, -1, 0, -1, 1, -1, 1],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 3, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0],
+    [0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 1, -1, 0, -1, 0, -1, 2, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0],
+    [0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0],
+    [1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0],
+    [1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0],
+    [1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 0, -1, 0, -1, 2, -1, 0],
+    [1, -1, 1, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 0, -1, 2, -1, 0, -1],
+    [-1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 3, -1, 3, -1, 2, -1, 2, -1, 0],
+    [1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 3, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 0, -1, 2, -1, 0],
+    [2, -1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 1, -1, 1, -1, 1, -1, 2, -1, 0],
+    [2, -1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 0, -1, 0, -1],
+    [-1, 0, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 1, -1, 2, -1, 0],
+    [2, -1, 0, -1, 0, -1, 0, -1, 2, -1, 1, -1, 1, -1, 1, -1, 0, -1, 0, -1],
+    [-1, 2, -1, 0, -1, 0, -1, 3, -1, 1, -1, 1, -1, 1, -1, 1, -1, 2, -1, 0],
+    [1, -1, 0, -1, 0, -1, 2, -1, 3, -1, 0, -1, 1, -1, 1, -1, 2, -1, 0, -1],
+    [-1, 2, -1, 0, -1, 0, -1, 1, -1, 3, -1, 0, -1, 1, -1, 2, -1, 0, -1, 0],
+    [1, -1, 0, -1, 0, -1, 3, -1, 1, -1, 2, -1, 0, -1, 2, -1, 0, -1, 0, -1],
+    [-1, 2, -1, 0, -1, 2, -1, 3, -1, 2, -1, 2, -1, 2, -1, 0, -1, 0, -1, 0],
+    [1, -1, 2, -1, 0, -1, 1, -1, 3, -1, 0, -1, 2, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 1, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0],
+    [1, -1, 2, -1, 0, -1, 1, -1, 2, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 1, -1, 0, -1, 2, -1, 1, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0],
+    [1, -1, 2, -1, 2, -1, 1, -1, 2, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1],
+    [-1, 1, -1, 2, -1, 1, -1, 1, -1, 2, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0]
+  ]
+}

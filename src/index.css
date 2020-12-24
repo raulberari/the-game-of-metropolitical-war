@@ -1,13 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+
 body {
+  background-color: black;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)),
+    url("https://i.ytimg.com/vi/FNs4RDi_8eA/maxresdefault.jpg");
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+#boardContainer {
+  min-width: 100%;
+  perspective: 3500px;
+  margin: -250px auto 90px auto;
+  display: flex;
+  justify-content: center;
+}
+
+#board {
+  padding-top: 40px;
+  position: relative;
+  user-select: none;
+  transform: rotateX(30deg);
+}
+
+#navbar {
+  flex-direction: column;
+  min-width: 1331px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  background-color: rgb(217, 196, 196);
+  color: rgb(238, 77, 47);
+  font-family: "Titillium Web";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  padding: 20px 0;
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+}
+
+#statusbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  background-color: rgb(217, 196, 196);
+  color: black;
+  font-family: "Titillium Web";
+  font-size: 16px;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  z-index: 99;
+  border-top: 1px solid black;
+}
+
+#center {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+#gameStats {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  font-size: 12px;
+}
+
+#openInfo {
+  width: 30%;
+  user-select: none;
+}
+
+#infoButton {
+  font-size: 20px;
+  margin-left: 10%;
+  color: black;
+}
+#infoButton:hover {
+  cursor: pointer;
+  color: #999 !important;
+}
+
+#gameStatsAlive,
+#gameStatsDead {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+#endRound {
+  background-color: rgb(238, 77, 47);
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 5px 15px;
+  user-select: none;
+}
+
+#startGame {
+  background-color: rgb(238, 77, 47);
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 5px 15px;
+  user-select: none;
+}
+#startGame:hover {
+  background-color: rgba(238, 77, 47, 0.8);
+}
+
+#endRound:hover {
+  opacity: 0.8;
+}
+
+.hegemonMovementHex:hover {
+  opacity: 1 !important;
+}
+
+.hegemonPiece:hover {
+  opacity: 0.7 !important;
+}
+
+.attackHexes:hover {
+  opacity: 1 !important;
+}
+
+.previewPoint:hover {
+  opacity: 1 !important;
+}
+
+#info {
+  position: fixed;
+  top: 10%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  height: 75vh;
+  color: white;
+  border-radius: 15px;
+  z-index: 105;
+  box-shadow: 0px 20px 40px 20px rgba(0, 0, 0, 0.65);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "Titillium Web";
+  background: -moz-linear-gradient(
+      rgba(36, 46, 64, 0.93),
+      rgba(36, 46, 64, 0.83)
+    ),
+    url("https://i.ytimg.com/vi/FNs4RDi_8eA/maxresdefault.jpg");
+  background-size: cover;
+  background-color: rgba(36, 46, 64, 0.95);
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+#closeInfoPanel {
+  top: 0;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: rgb(26, 33, 46);
+  padding: 10px 0 10px 25px;
+  /* margin-bottom: 20px; */
+}
+
+#closeInfo {
+  max-height: 50px;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0px 5px 0px 5px;
+}
+
+#closeInfo:hover {
+  background-color: rgb(238, 77, 47);
+}
+
+#infoTitle {
+  width: 100%;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+#infoImage1 {
+  width: 100%;
+  height: 39%;
+  object-fit: cover;
+  object-position: 45% 55%;
+  margin-bottom: 20px;
+}
+
+#infoMenu {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  max-width: 80%;
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menuButton {
+  flex: 1;
+  user-select: none;
+  text-align: center;
+  margin: 0 20px;
+  padding: 8px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+@media only screen and (max-width: 1700px) {
+  .menuButton {
+    margin: 0 10px;
+    font-size: 12px;
+  }
+  #infoTitle {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .menuButton {
+    margin: 0 5px;
+    font-size: 14px;
+    padding: 7px 15px;
+  }
+  #infoTitle {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .menuButton {
+    margin: 0 5px;
+    font-size: 12px;
+  }
+  #infoTitle {
+    font-size: 25px;
+  }
+}
+
+.menuButton:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#infoContentContainer {
+  width: 70%;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#infoContent {
+  font-size: 17px;
+}
+
+.textImage {
+  width: 100%;
+  align-self: center;
+  margin: 20px 0;
+}
+
+.hexImage {
+  margin: 0 5%;
+  width: 100px;
+}
+
+.hexDescription {
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-left: solid 2px white;
+  margin-bottom: 10px;
+}
+
+#insurgentVerticalMovement {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#generalMovement {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.insurgentVerticalExample,
+.generalMovementExample {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+}
+
+.generalMovementExample {
+  width: 40%;
+}
+
+.insurgentVerticalImage {
+  width: 80px;
+}
+.generalMovementImage {
+  width: 80%;
+  object-fit: cover;
+  margin: 20px;
+}
+
+#markHegemon {
+  background-color: rgb(187, 207, 236);
+  color: black;
+}
+
+#markInsurgent {
+  background-color: rgb(238, 77, 47);
+}
+.glowWhite {
+  -webkit-animation: glowWhite 1s ease-in-out infinite alternate;
+  -moz-animation: glowWhite 1s ease-in-out infinite alternate;
+  animation: glowWhite 1s ease-in-out infinite alternate;
+}
+.glowOrange {
+  -webkit-animation: glowOrange 1s ease-in-out infinite alternate;
+  -moz-animation: glowOrange 1s ease-in-out infinite alternate;
+  animation: glowOrange 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowWhite {
+  from {
+    text-shadow: 0 0 20px rgb(187, 207, 236), 0 0 30px rgb(187, 207, 236),
+      0 0 40px rgb(187, 207, 236), 0 0 50px rgb(187, 207, 236),
+      0 0 60px rgb(187, 207, 236), 0 0 70px rgb(187, 207, 236);
+  }
+
+  to {
+    text-shadow: 0 0 30px rgb(187, 207, 236), 0 0 40px rgb(187, 207, 236),
+      0 0 50px rgb(187, 207, 236), 0 0 60px rgb(187, 207, 236),
+      0 0 70px rgb(187, 207, 236), 0 0 80px rgb(187, 207, 236);
+  }
+}
+
+@keyframes glowOrange {
+  from {
+    text-shadow: 0 0 20px rgb(238, 77, 47), 0 0 30px rgb(238, 77, 47),
+      0 0 40px rgb(238, 77, 47), 0 0 50px rgb(238, 77, 47),
+      0 0 60px rgb(238, 77, 47), 0 0 70px rgb(238, 77, 47);
+  }
+
+  to {
+    text-shadow: 0 0 30px rgb(238, 77, 47), 0 0 40px rgb(238, 77, 47),
+      0 0 50px rgb(238, 77, 47), 0 0 60px rgb(238, 77, 47),
+      0 0 70px rgb(238, 77, 47), 0 0 80px rgb(238, 77, 47);
+  }
+}
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
