@@ -39,7 +39,10 @@ export const InfoGameplay = () => {
         </p>
       </div>
       <div className="hexDescription">
-        <img className="hexImage" src="images/hex-water.png"></img>
+        <img
+          className="hexImage"
+          src={process.env.PUBLIC_URL + "/images/hex-water.png"}
+        ></img>
         <p>
           <b>Water</b> hex, spanning rivers, artifcial seas, gulfs, accumulation
           lakes and canals. Accessible only to the{" "}
@@ -50,7 +53,10 @@ export const InfoGameplay = () => {
         </p>
       </div>
       <div className="hexDescription">
-        <img className="hexImage" src="images/hex-transport.png"></img>
+        <img
+          className="hexImage"
+          src={process.env.PUBLIC_URL + "/images/hex-transport.png"}
+        ></img>
         <p>
           <b>Transport</b> hex, representing bustling boulevards, highways,
           subway lines and viaducts. Due to the high civilian numbers, it is
@@ -62,7 +68,10 @@ export const InfoGameplay = () => {
         </p>
       </div>
       <div className="hexDescription">
-        <img className="hexImage" src="images/hex-bridge.png"></img>
+        <img
+          className="hexImage"
+          src={process.env.PUBLIC_URL + "/images/hex-bridge.png"}
+        ></img>
         <p>
           <b>Bridge</b> hex, which is a combined <b>Water</b> and{" "}
           <b>Transport</b> space. Accesible to both the{" "}
@@ -90,14 +99,14 @@ export const InfoGameplay = () => {
         <div className="generalMovementExample">
           <img
             className="generalMovementImage"
-            src="images/insurgent-movement.png"
+            src={process.env.PUBLIC_URL + "/images/insurgent-movement.png"}
           ></img>
           Insurgent Movement
         </div>
         <div className="generalMovementExample">
           <img
             className="generalMovementImage"
-            src="/images/hegemon-movement.png"
+            src={process.env.PUBLIC_URL + "/images/hegemon-movement.png"}
           ></img>
           Hegemon Movement
         </div>

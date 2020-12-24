@@ -69,6 +69,11 @@ const clickHegemonAttack = new Audio(clickHegemonAttackAudio);
 clickHegemonAttack.volume = 0.1;
 clickHegemonAttack.preload = "auto";
 
+export const playSound = (sound: HTMLAudioElement) => {
+  sound.currentTime = 0;
+  sound.play();
+};
+
 export const Board = (props: {
   hegemons: Hegemon[];
   insurgents: Insurgent[];
@@ -120,7 +125,7 @@ export const Board = (props: {
   const showHegemonMovement = (e: MouseEvent, hegemon: Hegemon) => {
     e.preventDefault();
     if (game.gameplayState === "hegemonMove" && hegemon.moves > 0) {
-      clickHegemonMove.play();
+      playSound(clickHegemonMove);
       if (areHexesEqual(hegemon, selectedHegemonMovement)) {
         setSelectedHegemonMovement({
           id: "",
@@ -148,7 +153,7 @@ export const Board = (props: {
   const showHegemonAttack = (e: MouseEvent, hegemon: Hegemon) => {
     e.preventDefault();
     if (game.gameplayState === "hegemonMove" && hegemon.moves > 0) {
-      clickHegemonAttack.play();
+      playSound(clickHegemonAttack);
       if (areHexesEqual(hegemon, selectedHegemonAttack)) {
         setSelectedHegemonAttack({
           id: "",
@@ -202,7 +207,7 @@ export const Board = (props: {
 
   const showInsurgentMovement = (insurgent: Insurgent) => {
     if (game.gameplayState === "insurgentMove" && insurgent.moves > 0) {
-      clickInsurgent.play();
+      playSound(clickInsurgent);
       if (arePointsEqual(insurgent, selectedInsurgent)) {
         setSelectedInsurgent(emptyInsurgent);
       } else {
@@ -212,8 +217,8 @@ export const Board = (props: {
   };
 
   const startGame = () => {
-    clickButton.play();
-    streetAmbience.play();
+    playSound(clickButton);
+    playSound(streetAmbience);
 
     closeInfo();
 
@@ -227,7 +232,7 @@ export const Board = (props: {
     const body = document.getElementsByTagName("body")![0];
 
     if (info.style.display !== "none") {
-      interfaceClose.play();
+      playSound(interfaceClose);
 
       setInfoMenu("intelligence");
 
@@ -247,13 +252,14 @@ export const Board = (props: {
   };
 
   const openInfo = () => {
-    interfaceOpen.play();
     const info = document.getElementById("info")!;
     const body = document.getElementsByTagName("body")![0];
 
     if (info.style.display === "flex") {
+      playSound(interfaceClose);
       info.style.display = "none";
     } else {
+      playSound(interfaceOpen);
       info.style.display = "flex";
       body.style.overflow = "hidden";
       info.focus();
@@ -264,7 +270,8 @@ export const Board = (props: {
     menu: "intelligence" | "gameplay" | "hegemon" | "insurgents" | "winning"
   ) => {
     setInfoMenu(menu);
-    clickInfoMenu.play();
+    clickInfoMenu.currentTime = 0;
+    playSound(clickInfoMenu);
 
     const info = document.getElementById("info")!;
     const oldScrollValue = info.scrollTop;
@@ -291,13 +298,13 @@ export const Board = (props: {
 
   const changeWhoMoves = () => {
     if (game.gameplayState === "insurgentMove") {
-      clickButton.play();
+      playSound(clickButton);
       endInsurgentsRound();
       const newGame: Game = JSON.parse(JSON.stringify(game));
       newGame.gameplayState = "insurgentPlace";
       setGame(newGame);
     } else if (game.gameplayState === "hegemonMove") {
-      roundEnd.play();
+      playSound(roundEnd);
       endHegemonRound();
       const newGame: Game = JSON.parse(JSON.stringify(game));
       newGame.gameplayState = "insurgentMove";
@@ -343,7 +350,7 @@ export const Board = (props: {
     const topExtra = 65;
     return (
       <img
-        src="images/hegemon-3d-blue.png"
+        src={process.env.PUBLIC_URL + "/images/hegemon-3d-blue.png"}
         key={hegemon.id}
         className={
           hegemon.moves > 0 && game.gameplayState === "hegemonMove"
@@ -382,7 +389,9 @@ export const Board = (props: {
               ? "default"
               : hegemon.moves > 0
               ? "pointer"
-              : 'url("images/x-cursor.png"), auto',
+              : 'url("' +
+                process.env.PUBLIC_URL +
+                '/images/x-cursor.png"), auto',
           opacity:
             areHexesEqual(hegemon, selectedHegemonMovement) ||
             areHexesEqual(hegemon, selectedHegemonAttack)
@@ -423,7 +432,7 @@ export const Board = (props: {
         return (
           <div>
             <img
-              src="images/insurgent-1-3d.png"
+              src={process.env.PUBLIC_URL + "/images/insurgent-1-3d.png"}
               key={insurgent.id}
               style={{
                 position: "absolute",
@@ -454,8 +463,11 @@ export const Board = (props: {
               <img
                 src={
                   insurgent.moves > 3
-                    ? "images/moves-3.png"
-                    : "images/moves-" + insurgent.moves + ".png"
+                    ? process.env.PUBLIC_URL + "/images/moves-3.png"
+                    : process.env.PUBLIC_URL +
+                      "/images/moves-" +
+                      insurgent.moves +
+                      ".png"
                 }
                 style={{
                   position: "absolute",
@@ -476,7 +488,7 @@ export const Board = (props: {
         return (
           <div>
             <img
-              src="images/insurgent-2-3d.png"
+              src={process.env.PUBLIC_URL + "/images/insurgent-2-3d.png"}
               key={insurgent.id}
               style={{
                 position: "absolute",
@@ -509,8 +521,11 @@ export const Board = (props: {
               <img
                 src={
                   insurgent.moves > 3
-                    ? "images/moves-3.png"
-                    : "images/moves-" + insurgent.moves + ".png"
+                    ? process.env.PUBLIC_URL + "/images/moves-3.png"
+                    : process.env.PUBLIC_URL +
+                      "/images/moves-" +
+                      insurgent.moves +
+                      ".png"
                 }
                 style={{
                   position: "absolute",
@@ -531,7 +546,7 @@ export const Board = (props: {
         return (
           <div>
             <img
-              src="images/insurgent-3-3d.png"
+              src={process.env.PUBLIC_URL + "/images/insurgent-3-3d.png"}
               key={insurgent.id}
               style={{
                 position: "absolute",
@@ -564,8 +579,11 @@ export const Board = (props: {
               <img
                 src={
                   insurgent.moves > 3
-                    ? "images/moves-3.png"
-                    : "images/moves-" + insurgent.moves + ".png"
+                    ? process.env.PUBLIC_URL + "/images/moves-3.png"
+                    : process.env.PUBLIC_URL +
+                      "/images/moves-" +
+                      insurgent.moves +
+                      ".png"
                 }
                 style={{
                   position: "absolute",

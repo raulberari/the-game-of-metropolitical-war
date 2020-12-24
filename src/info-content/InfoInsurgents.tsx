@@ -15,21 +15,21 @@ export const InfoInsurgents = () => {
         <div className="insurgentVerticalExample">
           <img
             className="insurgentVerticalImage"
-            src="images/3d/insurgent-3-3d.gif"
+            src={process.env.PUBLIC_URL + "/images/3d/insurgent-3-3d.gif"}
           ></img>
           <p>Below, through tunnels</p>
         </div>
         <div className="insurgentVerticalExample">
           <img
             className="insurgentVerticalImage"
-            src="images/3d/insurgent-1-3d.gif"
+            src={process.env.PUBLIC_URL + "/images/3d/insurgent-1-3d.gif"}
           ></img>
           <p>Ground Level</p>
         </div>
         <div className="insurgentVerticalExample">
           <img
             className="insurgentVerticalImage"
-            src="images/3d/insurgent-2-3d.gif"
+            src={process.env.PUBLIC_URL + "/images/3d/insurgent-2-3d.gif"}
           ></img>
           <p>Above, inside buildings</p>
         </div>

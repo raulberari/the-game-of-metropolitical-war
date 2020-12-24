@@ -16,6 +16,7 @@ import stepTransportAudio from "./sounds/step-2.wav";
 import hegemonDeathAudio from "./sounds/explosion-truck.wav";
 //@ts-ignore
 import roundEndAudio from "./sounds/beep-1.ogg";
+import { playSound } from "./Board";
 const stepLand = new Audio(stepLandAudio);
 stepLand.volume = 0.2;
 stepLand.preload = "auto";
@@ -68,9 +69,9 @@ export const PreviewPoint = (props: {
     // Change orientation if on rails
     if (isPointOnRails(point, config.board)) {
       newInsurgents[idx].orientation = "base";
-      stepTransport.play();
+      playSound(stepTransport);
     } else {
-      stepLand.play();
+      playSound(stepLand);
     }
 
     newInsurgents[idx].moves -= point.distance;
@@ -136,9 +137,9 @@ export const PreviewPoint = (props: {
     };
     // Change orientation if on rails
     if (isPointOnRails(point, config.board)) {
-      stepTransport.play();
+      playSound(stepTransport);
     } else {
-      stepLand.play();
+      playSound(stepLand);
     }
 
     const newInsurgents: Insurgent[] = JSON.parse(JSON.stringify(insurgents));
@@ -148,7 +149,7 @@ export const PreviewPoint = (props: {
     const newGame: Game = JSON.parse(JSON.stringify(game));
     if (game.gameplayState === "insurgentStart") {
       if (newInsurgents.length >= config.startInsurgents) {
-        roundEnd.play();
+        playSound(roundEnd);
         newGame.gameplayState = "hegemonStart";
         setGame(newGame);
       }
@@ -236,9 +237,9 @@ export const PreviewPoint = (props: {
 
       // Play the sounds
       if (toDelete.length > 0) {
-        hegemonDeath.play();
+        playSound(hegemonDeath);
       }
-      roundEnd.play();
+      playSound(roundEnd);
 
       // Set the game state
       newGame.deadHegemons = game.deadHegemons + toDelete.length;

@@ -12,6 +12,7 @@ import hegemonMoveAudio from "./sounds/click-6.wav";
 import hegemonMoveWaterAudio from "./sounds/water.wav";
 //@ts-ignore
 import roundEndAudio from "./sounds/beep-1.ogg";
+import { playSound } from "./Board";
 
 const explosion = new Audio(explosionAudio);
 explosion.volume = 0.1;
@@ -67,14 +68,14 @@ export const PreviewHex = (props: {
     newHegemons[idx].moves = 0;
 
     if (getCellValue(hex, config.board) === 1) {
-      hegemonMoveWater.play();
+      playSound(hegemonMoveWater);
     } else {
-      hegemonMove.play();
+      playSound(hegemonMove);
     }
 
     // If round end
     if (newHegemons.find((h) => h.moves > 0) === undefined) {
-      roundEnd.play();
+      playSound(roundEnd);
       for (const heg of newHegemons) {
         heg.moves = config.hegemonMoves;
       }
@@ -97,9 +98,6 @@ export const PreviewHex = (props: {
       col: -2,
       row: -2,
     });
-  };
-  const playSound = (audioFile: HTMLAudioElement) => {
-    audioFile.play();
   };
   const attackWithHegemon = (
     hegemon: Hexagon,
@@ -188,9 +186,9 @@ export const PreviewHex = (props: {
       moves: 1,
     };
     if (getCellValue(hex, config.board) === 1) {
-      hegemonMoveWater.play();
+      playSound(hegemonMoveWater);
     } else {
-      hegemonMove.play();
+      playSound(hegemonMove);
     }
 
     const newHegemons: Hegemon[] = JSON.parse(JSON.stringify(hegemons));
@@ -200,7 +198,7 @@ export const PreviewHex = (props: {
 
     const newGame: Game = JSON.parse(JSON.stringify(game));
     if (newHegemons.length === config.startHegemons) {
-      roundEnd.play();
+      playSound(roundEnd);
       newGame.gameplayState = "insurgentMove";
       setGame(newGame);
     }

@@ -6,6 +6,7 @@ import { Config, Game, Hegemon, Insurgent } from "./types";
 import stepLandAudio from "./sounds/step-1.wav";
 //@ts-ignore
 import roundEndAudio from "./sounds/beep-1.ogg";
+import { playSound } from "./Board";
 const stepLand = new Audio(stepLandAudio);
 stepLand.volume = 0.2;
 stepLand.preload = "auto";
@@ -53,7 +54,7 @@ export const PreviewHeightMove = (props: {
     insurgents: Insurgent[],
     choice: number
   ) => {
-    stepLand.play();
+    playSound(stepLand);
     const newInsurgents: Insurgent[] = JSON.parse(JSON.stringify(insurgents));
     const idx = newInsurgents.findIndex((p) => arePointsEqual(p, insurgent));
 

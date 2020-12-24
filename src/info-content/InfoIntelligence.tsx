@@ -17,13 +17,16 @@ export const InfoIntelligence = (props: { city: string }) => {
           municipalities, pushing refugees every day into the crowded complexes.
           <img
             className="textImage"
-            src="images/visuals/oil-drills-2.jpg"
+            src={process.env.PUBLIC_URL + "/images/visuals/oil-drills-2.jpg"}
           ></img>
           In 2032, the metropolitan area zoning commitee banned the existence of
           buildings smaller than 150ft, citing density concerns. By 2037, all
           individual households have been razed and replaced with hyper-dense
           towers, pierced by high-speed rail viaducts.
-          <img className="textImage" src="images/visuals/chongqing-3.jpg"></img>
+          <img
+            className="textImage"
+            src={process.env.PUBLIC_URL + "/images/visuals/chongqing-3.jpg"}
+          ></img>
           The{" "}
           <mark className="glowWhite" id="markHegemon">
             Hegemon
@@ -32,7 +35,10 @@ export const InfoIntelligence = (props: { city: string }) => {
           of pacifying the 'feral' city that grew out of hand. It has already
           re-established its control over the municipal waters, after the highly
           destructive offshore rig terrorist attack proved its weakness.
-          <img className="textImage" src="images/visuals/offshore-2.png"></img>
+          <img
+            className="textImage"
+            src={process.env.PUBLIC_URL + "/images/visuals/offshore-2.png"}
+          ></img>
         </div>
       );
     default:
