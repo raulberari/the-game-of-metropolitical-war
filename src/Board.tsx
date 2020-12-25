@@ -68,6 +68,7 @@ streetAmbience.preload = "auto";
 streetAmbience.loop = true;
 
 const soundEffects: HTMLAudioElement[] = [];
+const volumes: number[] = [];
 soundEffects.push(interfaceOpen);
 soundEffects.push(interfaceClose);
 soundEffects.push(clickInfoMenu);
@@ -88,7 +89,7 @@ const clickHegemonMove = new Audio(clickHegemonMoveAudio);
 clickHegemonMove.volume = 0.07;
 clickHegemonMove.preload = "auto";
 const explosion = new Audio(explosionAudio);
-explosion.volume = 0.03;
+explosion.volume = 0.05;
 explosion.preload = "auto";
 const hegemonMove = new Audio(hegemonMoveAudio);
 hegemonMove.volume = 0.15;
@@ -110,6 +111,10 @@ soundEffects.push(hegemonMove);
 soundEffects.push(hegemonMoveWater);
 soundEffects.push(stepTransport);
 soundEffects.push(hegemonDeath);
+
+for (const effect of soundEffects) {
+  volumes.push(effect.volume);
+}
 
 export const playSound = (sound: HTMLAudioElement) => {
   sound.currentTime = 0;
@@ -311,6 +316,7 @@ export const Board = (props: {
       info.style.display = "flex";
       body.style.overflow = "hidden";
       info.focus();
+      info.scrollTop = 0;
     }
 
     if (settings.style.display === "flex") {
@@ -706,6 +712,7 @@ export const Board = (props: {
     <Settings
       closeSettings={closeSettings}
       sfx={soundEffects}
+      sfxVolumes={volumes}
       ambientSound={streetAmbience}
       backgroundMusic={props.backgroundMusic}
     />,

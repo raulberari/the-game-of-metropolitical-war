@@ -6,10 +6,17 @@ import React from "react";
 export const Settings = (props: {
   closeSettings: () => void;
   sfx: HTMLAudioElement[];
+  sfxVolumes: number[];
   ambientSound: HTMLAudioElement;
   backgroundMusic: HTMLAudioElement;
 }) => {
-  const { closeSettings, sfx, ambientSound, backgroundMusic } = props;
+  const {
+    closeSettings,
+    sfx,
+    sfxVolumes,
+    ambientSound,
+    backgroundMusic,
+  } = props;
   const [sfxValue, setSfxValue] = React.useState(sfx[0].volume * 100);
   const [ambientSoundValue, setAmbientSoundValue] = React.useState(
     ambientSound.volume * 100
@@ -24,12 +31,12 @@ export const Settings = (props: {
   ) => {
     // @ts-ignore
     setSfxValue(newValue);
-    for (const effect of sfx) {
-      const ratio = sfxValue / 100 / sfx[0].volume;
-      if (isNaN((sfxValue / 100) * ratio)) {
-        effect.volume = 0;
+    for (let i = 0; i < sfx.length; i++) {
+      const ratio = sfxValue / 100 / sfxVolumes[0];
+      if (isNaN(sfxVolumes[i] * ratio)) {
+        sfx[i].volume = 0;
       } else {
-        effect.volume = Math.min((sfxValue / 100) * ratio, 1);
+        sfx[i].volume = Math.min(sfxVolumes[i] * ratio, 1);
       }
     }
   };
@@ -52,6 +59,7 @@ export const Settings = (props: {
 
   return (
     <div
+      id="settingsContainer"
       style={{
         display: "flex",
         flexDirection: "column",

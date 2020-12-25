@@ -178,7 +178,7 @@ code {
   position: fixed;
   top: 10%;
   align-self: center;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 50vw;
@@ -206,7 +206,7 @@ code {
   position: fixed;
   top: 10%;
   align-self: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   width: 50vw;
