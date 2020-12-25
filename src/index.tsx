@@ -48,7 +48,6 @@ const renderBoard = (config: any) => {
     }
   }
   const gameContainer = display.getContainer()!;
-
   const boardDiv = document.getElementById("board")!;
   boardDiv.appendChild(gameContainer);
   // Muzica maestre
