@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/the-game-of-metropolitical-war/static/css/main.e81d69e5.chunk.css",
-    "main.js": "/the-game-of-metropolitical-war/static/js/main.f2b25c05.chunk.js",
-    "main.js.map": "/the-game-of-metropolitical-war/static/js/main.f2b25c05.chunk.js.map",
+    "main.js": "/the-game-of-metropolitical-war/static/js/main.e80b8f3e.chunk.js",
+    "main.js.map": "/the-game-of-metropolitical-war/static/js/main.e80b8f3e.chunk.js.map",
     "runtime-main.js": "/the-game-of-metropolitical-war/static/js/runtime-main.8a6a517b.js",
     "runtime-main.js.map": "/the-game-of-metropolitical-war/static/js/runtime-main.8a6a517b.js.map",
     "static/js/2.43c2405c.chunk.js": "/the-game-of-metropolitical-war/static/js/2.43c2405c.chunk.js",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.8a6a517b.js",
     "static/js/2.43c2405c.chunk.js",
     "static/css/main.e81d69e5.chunk.css",
-    "static/js/main.f2b25c05.chunk.js"
+    "static/js/main.e80b8f3e.chunk.js"
   ]
 }
