@@ -365,7 +365,7 @@ code {
   margin: 20px 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .insurgentVerticalExample,
@@ -513,4 +513,26 @@ code {
     justify-content: center;
     align-items: center;
   }
+}
+
+#infoHegemon {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  line-height: 0.8;
+}
+h3 {
+  line-height: 0;
+  font-size: 22px;
+}
+
+.gameTimelineStepHegemon {
+  border-left: 3px solid white;
+  padding-left: 20px;
+}
+.gameTimelineStepInsurgent {
+  border-left: 3px solid rgb(238, 77, 47);
+  padding-left: 20px;
 }

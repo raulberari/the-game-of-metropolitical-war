@@ -5,10 +5,10 @@ export const InfoIntelligence = (props: { city: string }) => {
     case "NEW YORK CITY":
       return (
         <div>
-          NYC has swelled to over 50,000 people per km<sup>2</sup>, a swarming
-          megacity of 40 million. It's been 18 months since the NY Energy Dpt.
-          switched its production to petrol by redeploying oil pumps, following
-          a highly coordinated{" "}
+          NYC has swelled to over 50,000 people per km<sup>2</sup>, an
+          over-crowded megacity of 40 million. It's been 18 months since the NY
+          Energy Dpt. switched its production to petrol by redeploying oil
+          pumps, following a highly coordinated{" "}
           <mark className="glowOrange" id="markInsurgent">
             Insurgent
           </mark>{" "}
