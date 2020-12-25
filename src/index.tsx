@@ -7,6 +7,7 @@ import config from "./config/new-york.json";
 import { Display } from "rot-js";
 import { isCellValid, isSpaceAvailable } from "./Hegemon";
 import { Board } from "./Board";
+import { Root } from "./Root";
 import ReactDOM from "react-dom";
 import {
   isPointOnRails,
@@ -23,7 +24,7 @@ backgroundMusic.preload = "auto";
 backgroundMusic.loop = true;
 backgroundMusic.autoplay = true;
 
-const renderBoard = (config: any) => {
+export const renderBoard = (config: any, backgroundMusic: HTMLAudioElement) => {
   const cellToColor: Record<number, string> = {
     0: "rgb(255, 255, 255)",
     1: "rgb(58, 76, 105)",
@@ -53,6 +54,27 @@ const renderBoard = (config: any) => {
   // Muzica maestre
   backgroundMusic.play();
 
+  // const textElements = [];
+  // for (const location of config.locations) {
+  //   textElements.push(
+  //     <p
+  //       style={{
+  //         position: "absolute",
+  //         top: location.top,
+  //         left: location.left,
+  //         fontFamily: "Nova Square",
+  //         color: location.color,
+  //         fontWeight: 500,
+  //         fontSize: location.fontSize,
+  //         userSelect: "none",
+  //         transform: location.rotate,
+  //         zIndex: 1,
+  //       }}
+  //     >
+  //       {location.name}
+  //     </p>
+  //   );
+  // }
   // Render board text
   for (const location of config.locations) {
     const p = document.createElement("p");
@@ -72,6 +94,10 @@ const renderBoard = (config: any) => {
 
     boardDiv.appendChild(p);
   }
+
+  // Render title
+  document.getElementById("title")!.innerHTML = config.title;
+  document.getElementById("year")!.innerHTML = config.year;
 };
 
 const generateHegemons = (hegemons: Hegemon[], count: number) => {
@@ -328,9 +354,7 @@ const element = (
     backgroundMusic={backgroundMusic}
   />
 );
-ReactDOM.render(element, document.getElementById("board")!);
-// Render title
-document.getElementById("title")!.innerHTML = config.title;
-document.getElementById("year")!.innerHTML = config.year;
 
-renderBoard(config);
+ReactDOM.render(element, document.getElementById("board")!);
+
+renderBoard(config, backgroundMusic);

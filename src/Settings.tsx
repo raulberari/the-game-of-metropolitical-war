@@ -1,10 +1,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 import Slider from "@material-ui/core/Slider";
-import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import FormControl from "@material-ui/core/FormControl";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
+import React, { Dispatch, SetStateAction } from "react";
+
+import { Config } from "./types";
 
 export const Settings = (props: {
   closeSettings: () => void;
+  config: Config;
+  setConfig: Dispatch<SetStateAction<Config>>;
   sfx: HTMLAudioElement[];
   sfxVolumes: number[];
   ambientSound: HTMLAudioElement;
@@ -12,6 +20,8 @@ export const Settings = (props: {
 }) => {
   const {
     closeSettings,
+    config,
+    setConfig,
     sfx,
     sfxVolumes,
     ambientSound,
@@ -76,10 +86,6 @@ export const Settings = (props: {
       />
       <h1 style={{ textAlign: "center" }}>SETTINGS</h1>
       <div id="settingsContentContainer">
-        <div className="settingItem">
-          <span className="settingName">Map</span>
-          <span> [dropdown here]</span>
-        </div>
         <div className="settingItem">
           <span className="settingName">Sound Effects</span>
           <div className="sliderContainer">

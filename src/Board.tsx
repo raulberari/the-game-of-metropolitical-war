@@ -145,6 +145,7 @@ export const Board = (props: {
   const [infoMenu, setInfoMenu] = useState<
     "intelligence" | "gameplay" | "hegemon" | "insurgents" | "winning"
   >("intelligence");
+  const [config, setConfig] = useState<Config>(props.config);
   const [
     selectedHegemonMovement,
     setSelectedHegemonMovement,
@@ -163,7 +164,7 @@ export const Board = (props: {
   );
 
   const infoMenuToComponent = {
-    intelligence: <InfoIntelligence city={props.config.title} />,
+    intelligence: <InfoIntelligence city={config.title} />,
     gameplay: <InfoGameplay />,
     hegemon: <InfoHegemon />,
     insurgents: <InfoInsurgents />,
@@ -232,7 +233,7 @@ export const Board = (props: {
           const neighbors: Hegemon[] = getHexNeighbors(
             hegemon,
             hegemons,
-            props.config.board,
+            config.board,
             false
           );
           neighbors.push(hegemon);
@@ -410,7 +411,7 @@ export const Board = (props: {
       ins.attacked = 0;
     }
     for (const ins of newInsurgents) {
-      ins.moves = props.config.insurgentMoves;
+      ins.moves = config.insurgentMoves;
     }
     setInsurgents(newInsurgents);
 
@@ -420,7 +421,7 @@ export const Board = (props: {
   const endHegemonRound = () => {
     const newHegemons: Hegemon[] = JSON.parse(JSON.stringify(hegemons));
     for (const heg of newHegemons) {
-      heg.moves = props.config.hegemonMoves;
+      heg.moves = config.hegemonMoves;
     }
     setHegemons(newHegemons);
 
@@ -711,6 +712,8 @@ export const Board = (props: {
   ReactDOM.render(
     <Settings
       closeSettings={closeSettings}
+      config={config}
+      setConfig={setConfig}
       sfx={soundEffects}
       sfxVolumes={volumes}
       ambientSound={streetAmbience}
@@ -761,7 +764,7 @@ export const Board = (props: {
     )!.innerHTML = infoMenu.toUpperCase();
   } else {
     document.getElementById("infoMenuTitle")!.innerHTML =
-      props.config.title + " " + props.config.year;
+      config.title + " " + config.year;
   }
   ReactDOM.render(
     infoMenuToComponent[infoMenu],
@@ -834,7 +837,7 @@ export const Board = (props: {
         hexes={getHexNeighbors(
           selectedHegemonMovement,
           hegemons,
-          props.config.board,
+          config.board,
           true
         )}
         hegemon={selectedHegemonMovement}
@@ -847,7 +850,7 @@ export const Board = (props: {
         setInsurgents={setInsurgents}
         game={game}
         setGame={setGame}
-        config={props.config}
+        config={config}
         color="#438ef4"
         explosion={explosion}
         hegemonMove={hegemonMove}
@@ -859,7 +862,7 @@ export const Board = (props: {
         hexes={getHexNeighbors(
           selectedHegemonAttack,
           hegemons,
-          props.config.board,
+          config.board,
           false
         )}
         hegemon={selectedHegemonAttack}
@@ -872,7 +875,7 @@ export const Board = (props: {
         setInsurgents={setInsurgents}
         game={game}
         setGame={setGame}
-        config={props.config}
+        config={config}
         color="red"
         explosion={explosion}
         hegemonMove={hegemonMove}
@@ -885,7 +888,7 @@ export const Board = (props: {
           points={getInsurgentNeighbors(
             selectedInsurgent,
             insurgents,
-            props.config.board
+            config.board
           )}
           insurgent={selectedInsurgent}
           hegemons={hegemons}
@@ -895,7 +898,7 @@ export const Board = (props: {
           game={game}
           setGame={setGame}
           setSelectedInsurgent={setSelectedInsurgent}
-          config={props.config}
+          config={config}
           stepLand={stepLand}
           roundEnd={roundEnd}
           stepTransport={stepTransport}
@@ -915,7 +918,7 @@ export const Board = (props: {
           game={game}
           setGame={setGame}
           setSelectedInsurgent={setSelectedInsurgent}
-          config={props.config}
+          config={config}
           stepLand={stepLand}
           roundEnd={roundEnd}
           stepTransport={stepTransport}
@@ -933,7 +936,7 @@ export const Board = (props: {
           setInsurgents={setInsurgents}
           game={game}
           setGame={setGame}
-          config={props.config}
+          config={config}
           color="#438ef4"
           explosion={explosion}
           hegemonMove={hegemonMove}
