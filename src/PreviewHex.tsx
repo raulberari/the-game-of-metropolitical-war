@@ -3,29 +3,7 @@ import { areHexesEqual, getCellValue, getHexNeighbors } from "./Hegemon";
 import { isInsurgentAdjacentToHex } from "./Insurgent";
 import { Hexagon, Hegemon, Insurgent, Game, Config } from "./types";
 import { v4 as uuidv4 } from "uuid";
-
-// @ts-ignore
-import explosionAudio from "./sounds/explosion.wav";
-// @ts-ignore
-import hegemonMoveAudio from "./sounds/click-6.wav";
-// @ts-ignore
-import hegemonMoveWaterAudio from "./sounds/water.wav";
-//@ts-ignore
-import roundEndAudio from "./sounds/beep-1.ogg";
 import { playSound } from "./Board";
-
-const explosion = new Audio(explosionAudio);
-explosion.volume = 0.1;
-explosion.preload = "auto";
-const hegemonMove = new Audio(hegemonMoveAudio);
-hegemonMove.volume = 0.15;
-hegemonMove.preload = "auto";
-const hegemonMoveWater = new Audio(hegemonMoveWaterAudio);
-hegemonMoveWater.volume = 0.15;
-hegemonMoveWater.preload = "auto";
-const roundEnd = new Audio(roundEndAudio);
-roundEnd.volume = 0.2;
-roundEnd.preload = "auto";
 
 export const PreviewHex = (props: {
   hex: Hexagon;
@@ -42,6 +20,10 @@ export const PreviewHex = (props: {
   config: Config;
   scale: number;
   color: string;
+  explosion: HTMLAudioElement;
+  hegemonMove: HTMLAudioElement;
+  hegemonMoveWater: HTMLAudioElement;
+  roundEnd: HTMLAudioElement;
 }) => {
   const {
     hex,
@@ -58,6 +40,10 @@ export const PreviewHex = (props: {
     config,
     scale,
     color,
+    explosion,
+    hegemonMove,
+    hegemonMoveWater,
+    roundEnd,
   } = props;
 
   const moveHegemon = (hex: Hexagon, hegemon: Hexagon, hegemons: Hegemon[]) => {

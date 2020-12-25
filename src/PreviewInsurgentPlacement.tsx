@@ -12,6 +12,11 @@ export const PreviewInsurgentPlacement = (props: {
   setGame: Dispatch<SetStateAction<Game>>;
   setSelectedInsurgent: Dispatch<SetStateAction<Insurgent>>;
   config: Config;
+
+  stepLand: HTMLAudioElement;
+  roundEnd: HTMLAudioElement;
+  stepTransport: HTMLAudioElement;
+  hegemonDeath: HTMLAudioElement;
 }) => {
   const {
     points,
@@ -23,6 +28,10 @@ export const PreviewInsurgentPlacement = (props: {
     setGame,
     setSelectedInsurgent,
     config,
+    stepLand,
+    roundEnd,
+    stepTransport,
+    hegemonDeath,
   } = props;
 
   const pointPreviews = points.map((point) => {
@@ -40,6 +49,10 @@ export const PreviewInsurgentPlacement = (props: {
         setSelectedInsurgent={setSelectedInsurgent}
         config={config}
         key={point.id}
+        stepLand={stepLand}
+        roundEnd={roundEnd}
+        stepTransport={stepTransport}
+        hegemonDeath={hegemonDeath}
       />
     );
   });

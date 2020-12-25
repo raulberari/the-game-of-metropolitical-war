@@ -14,6 +14,11 @@ export const PreviewInsurgentMovement = (props: {
   setInsurgents: Dispatch<SetStateAction<Insurgent[]>>;
   setSelectedInsurgent: Dispatch<SetStateAction<Insurgent>>;
   config: Config;
+
+  stepLand: HTMLAudioElement;
+  roundEnd: HTMLAudioElement;
+  stepTransport: HTMLAudioElement;
+  hegemonDeath: HTMLAudioElement;
 }) => {
   const {
     points,
@@ -26,6 +31,10 @@ export const PreviewInsurgentMovement = (props: {
     setInsurgents,
     setSelectedInsurgent,
     config,
+    stepLand,
+    roundEnd,
+    stepTransport,
+    hegemonDeath,
   } = props;
   const pointPreviews = points.map((point) => (
     <PreviewPoint
@@ -40,6 +49,10 @@ export const PreviewInsurgentMovement = (props: {
       setSelectedInsurgent={setSelectedInsurgent}
       config={config}
       key={point.id}
+      stepLand={stepLand}
+      roundEnd={roundEnd}
+      stepTransport={stepTransport}
+      hegemonDeath={hegemonDeath}
     />
   ));
 
@@ -55,6 +68,7 @@ export const PreviewInsurgentMovement = (props: {
         setGame={setGame}
         setSelectedInsurgent={setSelectedInsurgent}
         config={config}
+        stepLand={stepLand}
       />
       {pointPreviews}
     </div>

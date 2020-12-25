@@ -28,7 +28,7 @@ code {
 }
 
 #boardContainer {
-  min-width: 100%;
+  max-width: 100%;
   perspective: 3500px;
   margin: -250px auto 90px auto;
   display: flex;
@@ -94,18 +94,38 @@ code {
 }
 
 #openInfo {
-  width: 30%;
   user-select: none;
-}
-
-#infoButton {
+  margin-right: 20px;
   font-size: 20px;
-  margin-left: 10%;
+  color: black;
+  padding-top: 1px;
+}
+#openSettings {
+  user-select: none;
+  margin-left: 20px;
   color: black;
 }
+
 #infoButton:hover {
   cursor: pointer;
   color: #999 !important;
+}
+
+#settingsButton:hover {
+  cursor: pointer;
+  color: #999 !important;
+}
+
+#settingsButton {
+  font-size: 22px;
+  color: black;
+}
+
+#infoSettingsContainer {
+  width: 30%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 
 #gameStatsAlive,
@@ -158,7 +178,7 @@ code {
   position: fixed;
   top: 10%;
   align-self: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   width: 50vw;
@@ -181,24 +201,55 @@ code {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-#closeInfoPanel {
+
+#settings {
+  position: fixed;
+  top: 10%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  height: 75vh;
+  color: white;
+  border-radius: 15px;
+  z-index: 105;
+  box-shadow: 0px 20px 40px 20px rgba(0, 0, 0, 0.65);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "Titillium Web";
+  background: -moz-linear-gradient(
+      rgba(36, 46, 64, 0.93),
+      rgba(36, 46, 64, 0.83)
+    ),
+    url("https://i.ytimg.com/vi/FNs4RDi_8eA/maxresdefault.jpg");
+  background-size: cover;
+  background-color: rgba(36, 46, 64, 0.95);
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.closeInfoPanel {
   top: 0;
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
+  align-self: center;
   background-color: rgb(26, 33, 46);
   padding: 10px 0 10px 25px;
   /* margin-bottom: 20px; */
 }
 
-#closeInfo {
+#closeInfo,
+#closeSettings {
   max-height: 50px;
   cursor: pointer;
   border-radius: 20px;
   padding: 0px 5px 0px 5px;
 }
 
-#closeInfo:hover {
+#closeInfo:hover,
+#closeSettings:hover {
   background-color: rgb(238, 77, 47);
 }
 
@@ -211,7 +262,7 @@ code {
   margin-bottom: 20px;
 }
 
-#infoImage1 {
+.infoImage {
   width: 100%;
   height: 39%;
   object-fit: cover;
@@ -400,4 +451,41 @@ code {
 .my-node-exit-active {
   opacity: 0;
   transition: opacity 200ms;
+}
+
+#settingsContentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-self: center;
+}
+
+.settingItem {
+  display: flex;
+  min-height: 40px;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 5px;
+  padding: 10px 20px;
+}
+
+.settingName {
+  width: 50%;
+}
+.sliderContainer {
+  width: 50%;
+}
+
+#applySettings {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-self: center;
+  padding: 10px 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  user-select: none;
+}
+#applySettings:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }

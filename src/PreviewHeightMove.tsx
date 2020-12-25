@@ -1,18 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
+import { playSound } from "./Board";
 import { arePointsEqual, isPointOnRails } from "./Insurgent";
 import { Config, Game, Hegemon, Insurgent } from "./types";
-
-//@ts-ignore
-import stepLandAudio from "./sounds/step-1.wav";
-//@ts-ignore
-import roundEndAudio from "./sounds/beep-1.ogg";
-import { playSound } from "./Board";
-const stepLand = new Audio(stepLandAudio);
-stepLand.volume = 0.2;
-stepLand.preload = "auto";
-const roundEnd = new Audio(roundEndAudio);
-roundEnd.volume = 0.2;
-roundEnd.preload = "auto";
 
 export const PreviewHeightMove = (props: {
   insurgent: Insurgent;
@@ -24,6 +13,7 @@ export const PreviewHeightMove = (props: {
   setInsurgents: Dispatch<SetStateAction<Insurgent[]>>;
   setSelectedInsurgent: Dispatch<SetStateAction<Insurgent>>;
   config: Config;
+  stepLand: HTMLAudioElement;
 }) => {
   const {
     insurgent,
@@ -33,6 +23,7 @@ export const PreviewHeightMove = (props: {
     setInsurgents,
     setSelectedInsurgent,
     config,
+    stepLand,
   } = props;
 
   // Difference between insurgent orientation and choice

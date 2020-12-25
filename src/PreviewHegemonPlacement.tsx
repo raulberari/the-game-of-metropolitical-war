@@ -12,6 +12,10 @@ export const PreviewHegemonPlacement = (props: {
   setGame: Dispatch<SetStateAction<Game>>;
   config: Config;
   color: string;
+  explosion: HTMLAudioElement;
+  hegemonMove: HTMLAudioElement;
+  hegemonMoveWater: HTMLAudioElement;
+  roundEnd: HTMLAudioElement;
 }) => {
   const {
     hexes,
@@ -23,6 +27,10 @@ export const PreviewHegemonPlacement = (props: {
     setGame,
     config,
     color,
+    explosion,
+    hegemonMove,
+    hegemonMoveWater,
+    roundEnd,
   } = props;
 
   const emptyHegemon = {
@@ -50,6 +58,10 @@ export const PreviewHegemonPlacement = (props: {
       setGame={setGame}
       config={config}
       key={hex.id}
+      explosion={explosion}
+      hegemonMove={hegemonMove}
+      hegemonMoveWater={hegemonMoveWater}
+      roundEnd={roundEnd}
     />
   ));
 

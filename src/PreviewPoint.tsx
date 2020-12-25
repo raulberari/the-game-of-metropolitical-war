@@ -8,27 +8,7 @@ import { Point, Insurgent, Hegemon, Game, Config } from "./types";
 import { v4 as uuidv4 } from "uuid";
 import { areHexesEqual, getHegemonGroup, getHexPoints } from "./Hegemon";
 
-//@ts-ignore
-import stepLandAudio from "./sounds/step-1.wav";
-//@ts-ignore
-import stepTransportAudio from "./sounds/step-2.wav";
-//@ts-ignore
-import hegemonDeathAudio from "./sounds/explosion-truck.wav";
-//@ts-ignore
-import roundEndAudio from "./sounds/beep-1.ogg";
 import { playSound } from "./Board";
-const stepLand = new Audio(stepLandAudio);
-stepLand.volume = 0.2;
-stepLand.preload = "auto";
-const stepTransport = new Audio(stepTransportAudio);
-stepTransport.volume = 0.8;
-stepTransport.preload = "auto";
-const hegemonDeath = new Audio(hegemonDeathAudio);
-hegemonDeath.volume = 0.17;
-hegemonDeath.preload = "auto";
-const roundEnd = new Audio(roundEndAudio);
-roundEnd.volume = 0.2;
-roundEnd.preload = "auto";
 
 export const PreviewPoint = (props: {
   point: Point;
@@ -41,6 +21,10 @@ export const PreviewPoint = (props: {
   setInsurgents: Dispatch<SetStateAction<Insurgent[]>>;
   setSelectedInsurgent: Dispatch<SetStateAction<Insurgent>>;
   config: Config;
+  stepLand: HTMLAudioElement;
+  stepTransport: HTMLAudioElement;
+  hegemonDeath: HTMLAudioElement;
+  roundEnd: HTMLAudioElement;
 }) => {
   const {
     point,
@@ -53,6 +37,10 @@ export const PreviewPoint = (props: {
     setInsurgents,
     setSelectedInsurgent,
     config,
+    stepLand,
+    stepTransport,
+    hegemonDeath,
+    roundEnd,
   } = props;
 
   const moveInsurgent = (

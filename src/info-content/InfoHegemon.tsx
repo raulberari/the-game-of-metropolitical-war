@@ -5,7 +5,7 @@ export const InfoHegemon = () => {
       The Hegemon is built up around ISR values (Intelligence, Surveillance and
       Reconnaissance)
       <img src={process.env.PUBLIC_URL + "/images/3d/hegemon-3d-2.gif"}></img>
-      <h2></h2>
+      <h2>Movement & Attacking</h2>
     </div>
   );
 };

@@ -18,7 +18,7 @@ import { Game, Hegemon, Insurgent } from "./types";
 //@ts-ignore
 import backgroundMusicAudio from "./sounds/tears-in-rain.mp3";
 const backgroundMusic = new Audio(backgroundMusicAudio);
-backgroundMusic.volume = 0.4;
+backgroundMusic.volume = 0.2;
 backgroundMusic.preload = "auto";
 backgroundMusic.loop = true;
 backgroundMusic.autoplay = true;
@@ -326,6 +326,7 @@ const element = (
     insurgents={insurgents}
     game={game}
     config={config}
+    backgroundMusic={backgroundMusic}
   />
 );
 ReactDOM.render(element, document.getElementById("board")!);

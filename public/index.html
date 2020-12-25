@@ -36,10 +36,11 @@
       <div id="boardContainer">
         <div id="board"></div>
       </div>
-      <div id="info">
-        <div id="closeInfoPanel"><span id="closeInfo">✕</span></div>
+      <div id="settings"></div>
+      <div style="display: none" id="info">
+        <div class="closeInfoPanel"><span id="closeInfo">✕</span></div>
         <img
-          id="infoImage1"
+          class="infoImage"
           src="%PUBLIC_URL%/images/visuals/chongqing-1.gif"
         />
         <div id="infoTitle">THE GAME OF METROPOLITICAL WAR</div>
@@ -58,7 +59,10 @@
         </div>
       </div>
       <div id="statusbar">
-        <div id="openInfo"><span id="infoButton">🛈</span></div>
+        <div id="infoSettingsContainer">
+          <div id="openInfo"><span id="infoButton">🛈</span></div>
+          <div id="openSettings"><span id="settingsButton">⚙</span></div>
+        </div>
         <div id="center">
           <div id="whoMoves">To move: Insurgents</div>
           <div id="startGame">Start</div>

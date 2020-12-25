@@ -2,7 +2,7 @@
 export const InfoInsurgents = () => {
   return (
     <div>
-      Each{" "}
+      Insurgents can move either Each{" "}
       <mark className="glowOrange" id="markInsurgent">
         Insurgent
       </mark>{" "}

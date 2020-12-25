@@ -16,6 +16,10 @@ export const PreviewHexes = (props: {
   setInsurgents: Dispatch<SetStateAction<Insurgent[]>>;
   config: Config;
   color: string;
+  explosion: HTMLAudioElement;
+  hegemonMove: HTMLAudioElement;
+  hegemonMoveWater: HTMLAudioElement;
+  roundEnd: HTMLAudioElement;
 }) => {
   const {
     hexes,
@@ -31,6 +35,10 @@ export const PreviewHexes = (props: {
     setInsurgents,
     config,
     color,
+    explosion,
+    hegemonMove,
+    hegemonMoveWater,
+    roundEnd,
   } = props;
   const hexPreviews = hexes.map((hex) => (
     <PreviewHex
@@ -49,9 +57,12 @@ export const PreviewHexes = (props: {
       setGame={setGame}
       config={config}
       key={hex.id}
+      explosion={explosion}
+      hegemonMove={hegemonMove}
+      hegemonMoveWater={hegemonMoveWater}
+      roundEnd={roundEnd}
     />
   ));
-
   return (
     <div
       className={

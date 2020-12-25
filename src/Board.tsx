@@ -21,6 +21,7 @@ import { InfoIntelligence } from "./info-content/InfoIntelligence";
 import { InfoWinning } from "./info-content/InfoWinning";
 import { InfoHegemon } from "./info-content/InfoHegemon";
 import { InfoInsurgents } from "./info-content/InfoInsurgents";
+import { Settings } from "./Settings";
 
 //@ts-ignore
 import interfaceOpenAudio from "./sounds/interface-chirp-open.wav";
@@ -40,34 +41,75 @@ import clickInsurgentAudio from "./sounds/click-3.wav";
 import clickHegemonMoveAudio from "./sounds/click-4.wav";
 //@ts-ignore
 import clickHegemonAttackAudio from "./sounds/click-5.wav";
+//@ts-ignore
+import stepLandAudio from "./sounds/step-1.wav";
+// @ts-ignore
+import explosionAudio from "./sounds/explosion.wav";
+// @ts-ignore
+import hegemonMoveAudio from "./sounds/click-6.wav";
+// @ts-ignore
+import hegemonMoveWaterAudio from "./sounds/water.wav";
+//@ts-ignore
+import stepTransportAudio from "./sounds/step-2.wav";
+//@ts-ignore
+import hegemonDeathAudio from "./sounds/explosion-truck.wav";
+
 const interfaceOpen = new Audio(interfaceOpenAudio);
-interfaceOpen.volume = 0.2;
-interfaceOpen.preload = "auto";
 const interfaceClose = new Audio(interfaceCloseAudio);
-interfaceClose.volume = 0.2;
-interfaceClose.preload = "auto";
 const clickInfoMenu = new Audio(clickInfoMenuAudio);
-clickInfoMenu.volume = 0.1;
-clickInfoMenu.preload = "auto";
 const clickButton = new Audio(clickButtonAudio);
-clickButton.volume = 0.1;
-clickButton.preload = "auto";
 const roundEnd = new Audio(roundEndAudio);
-roundEnd.volume = 0.2;
-roundEnd.preload = "auto";
+const clickHegemonAttack = new Audio(clickHegemonAttackAudio);
+const stepLand = new Audio(stepLandAudio);
+
 const streetAmbience = new Audio(streetAmbienceAudio);
 streetAmbience.volume = 0.25;
 streetAmbience.preload = "auto";
 streetAmbience.loop = true;
+
+const soundEffects: HTMLAudioElement[] = [];
+soundEffects.push(interfaceOpen);
+soundEffects.push(interfaceClose);
+soundEffects.push(clickInfoMenu);
+soundEffects.push(clickButton);
+soundEffects.push(roundEnd);
+soundEffects.push(clickHegemonAttack);
+soundEffects.push(stepLand);
+
+for (const effect of soundEffects) {
+  effect.volume = 0.15;
+  effect.preload = "auto";
+}
+
 const clickInsurgent = new Audio(clickInsurgentAudio);
-clickInsurgent.volume = 0.2;
+clickInsurgent.volume = 0.5;
 clickInsurgent.preload = "auto";
 const clickHegemonMove = new Audio(clickHegemonMoveAudio);
-clickHegemonMove.volume = 0.1;
+clickHegemonMove.volume = 0.07;
 clickHegemonMove.preload = "auto";
-const clickHegemonAttack = new Audio(clickHegemonAttackAudio);
-clickHegemonAttack.volume = 0.1;
-clickHegemonAttack.preload = "auto";
+const explosion = new Audio(explosionAudio);
+explosion.volume = 0.03;
+explosion.preload = "auto";
+const hegemonMove = new Audio(hegemonMoveAudio);
+hegemonMove.volume = 0.15;
+hegemonMove.preload = "auto";
+const hegemonMoveWater = new Audio(hegemonMoveWaterAudio);
+hegemonMoveWater.volume = 0.4;
+hegemonMoveWater.preload = "auto";
+const stepTransport = new Audio(stepTransportAudio);
+stepTransport.volume = 1;
+stepTransport.preload = "auto";
+const hegemonDeath = new Audio(hegemonDeathAudio);
+hegemonDeath.volume = 0.08;
+hegemonDeath.preload = "auto";
+
+soundEffects.push(clickInsurgent);
+soundEffects.push(clickHegemonMove);
+soundEffects.push(explosion);
+soundEffects.push(hegemonMove);
+soundEffects.push(hegemonMoveWater);
+soundEffects.push(stepTransport);
+soundEffects.push(hegemonDeath);
 
 export const playSound = (sound: HTMLAudioElement) => {
   sound.currentTime = 0;
@@ -79,6 +121,7 @@ export const Board = (props: {
   insurgents: Insurgent[];
   game: Game;
   config: Config;
+  backgroundMusic: HTMLAudioElement;
 }) => {
   const emptyInsurgent: Insurgent = {
     id: "",
@@ -221,6 +264,7 @@ export const Board = (props: {
     playSound(streetAmbience);
 
     closeInfo();
+    closeSettings();
 
     const newGame: Game = JSON.parse(JSON.stringify(game));
     newGame.gameplayState = "insurgentStart";
@@ -229,10 +273,14 @@ export const Board = (props: {
 
   const closeInfo = () => {
     const info = document.getElementById("info")!;
+    const settings = document.getElementById("settings")!;
     const body = document.getElementsByTagName("body")![0];
 
     if (info.style.display !== "none") {
-      playSound(interfaceClose);
+      if (settings.style.display === "none") {
+        playSound(interfaceClose);
+        body.style.overflow = "auto";
+      }
 
       setInfoMenu("intelligence");
 
@@ -248,21 +296,25 @@ export const Board = (props: {
         "transparent";
     }
     info.style.display = "none";
-    body.style.overflow = "auto";
   };
 
   const openInfo = () => {
     const info = document.getElementById("info")!;
+    const settings = document.getElementById("settings")!;
     const body = document.getElementsByTagName("body")![0];
 
     if (info.style.display === "flex") {
       playSound(interfaceClose);
-      info.style.display = "none";
+      closeInfo();
     } else {
       playSound(interfaceOpen);
       info.style.display = "flex";
       body.style.overflow = "hidden";
       info.focus();
+    }
+
+    if (settings.style.display === "flex") {
+      closeSettings();
     }
   };
 
@@ -294,6 +346,40 @@ export const Board = (props: {
       "transparent";
     document.getElementById(menu + "Button")!.style.borderBottom =
       "2px solid white";
+  };
+
+  const closeSettings = () => {
+    const settings = document.getElementById("settings")!;
+    const info = document.getElementById("info")!;
+    const body = document.getElementsByTagName("body")![0];
+
+    if (settings.style.display !== "none") {
+      if (info.style.display === "none") {
+        playSound(interfaceClose);
+        body.style.overflow = "auto";
+      }
+    }
+
+    settings.style.display = "none";
+  };
+
+  const openSettings = () => {
+    const settings = document.getElementById("settings")!;
+    const info = document.getElementById("info")!;
+    const body = document.getElementsByTagName("body")![0];
+
+    if (settings.style.display === "flex") {
+      playSound(interfaceClose);
+      closeSettings();
+    } else {
+      playSound(interfaceOpen);
+      settings.style.display = "flex";
+      body.style.overflow = "hidden";
+      settings.focus();
+    }
+    if (info.style.display === "flex") {
+      closeInfo();
+    }
   };
 
   const changeWhoMoves = () => {
@@ -616,18 +702,35 @@ export const Board = (props: {
     hegemonWin: "The Hegemon Wins",
   };
 
+  ReactDOM.render(
+    <Settings
+      closeSettings={closeSettings}
+      sfx={soundEffects}
+      ambientSound={streetAmbience}
+      backgroundMusic={props.backgroundMusic}
+    />,
+    document.getElementById("settings")
+  );
+
   document.getElementById("closeInfo")!.onclick = closeInfo;
   document.getElementById("infoButton")!.onclick = openInfo;
 
+  document.getElementById("settingsButton")!.onclick = openSettings;
+
   document.getElementById("boardContainer")!.onclick = () => {
     closeInfo();
+    closeSettings();
   };
   document.getElementsByTagName("body")![0].onkeydown = (ev) => {
     if (ev.key === "Escape") {
       closeInfo();
+      closeSettings();
     }
     if (ev.key === "i") {
       openInfo();
+    }
+    if (ev.key === "p") {
+      openSettings();
     }
   };
 
@@ -706,6 +809,7 @@ export const Board = (props: {
     document.getElementById("endRound")!.style.backgroundColor =
       "rgb(36, 46, 64)";
     document.getElementById("infoButton")!.style.color = "white";
+    document.getElementById("settingsButton")!.style.color = "white";
   } else {
     document.getElementById("statusbar")!.style.backgroundColor =
       "rgb(217, 196, 196)";
@@ -713,6 +817,7 @@ export const Board = (props: {
     document.getElementById("endRound")!.style.backgroundColor =
       "rgb(238, 77, 47)";
     document.getElementById("infoButton")!.style.color = "black";
+    document.getElementById("settingsButton")!.style.color = "black";
   }
 
   return (
@@ -737,6 +842,10 @@ export const Board = (props: {
         setGame={setGame}
         config={props.config}
         color="#438ef4"
+        explosion={explosion}
+        hegemonMove={hegemonMove}
+        hegemonMoveWater={hegemonMoveWater}
+        roundEnd={roundEnd}
       />
       {/* Hegemon attack preview*/}
       <PreviewHexes
@@ -758,6 +867,10 @@ export const Board = (props: {
         setGame={setGame}
         config={props.config}
         color="red"
+        explosion={explosion}
+        hegemonMove={hegemonMove}
+        hegemonMoveWater={hegemonMoveWater}
+        roundEnd={roundEnd}
       />
       {/* Insurgent movement preview */}
       {game.gameplayState === "insurgentMove" ? (
@@ -776,6 +889,10 @@ export const Board = (props: {
           setGame={setGame}
           setSelectedInsurgent={setSelectedInsurgent}
           config={props.config}
+          stepLand={stepLand}
+          roundEnd={roundEnd}
+          stepTransport={stepTransport}
+          hegemonDeath={hegemonDeath}
         />
       ) : null}
 
@@ -792,6 +909,10 @@ export const Board = (props: {
           setGame={setGame}
           setSelectedInsurgent={setSelectedInsurgent}
           config={props.config}
+          stepLand={stepLand}
+          roundEnd={roundEnd}
+          stepTransport={stepTransport}
+          hegemonDeath={hegemonDeath}
         />
       ) : null}
 
@@ -807,6 +928,10 @@ export const Board = (props: {
           setGame={setGame}
           config={props.config}
           color="#438ef4"
+          explosion={explosion}
+          hegemonMove={hegemonMove}
+          hegemonMoveWater={hegemonMoveWater}
+          roundEnd={roundEnd}
         />
       ) : null}
 
