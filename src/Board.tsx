@@ -277,6 +277,17 @@ export const Board = (props: {
     setGame(newGame);
   };
 
+  const restartGame = () => {
+    playSound(roundEnd);
+    const newGame: Game = JSON.parse(JSON.stringify(game));
+    newGame.gameplayState = "preStart";
+    newGame.deadInsurgents = 0;
+    newGame.deadHegemons = 0;
+    setGame(newGame);
+    setInsurgents([]);
+    setHegemons([]);
+  };
+
   const closeInfo = () => {
     const info = document.getElementById("info")!;
     const settings = document.getElementById("settings")!;
@@ -724,6 +735,7 @@ export const Board = (props: {
 
   document.getElementById("closeInfo")!.onclick = closeInfo;
   document.getElementById("infoButton")!.onclick = openInfo;
+  document.getElementById("restartGameButton")!.onclick = restartGame;
 
   document.getElementById("settingsButton")!.onclick = openSettings;
 
@@ -733,8 +745,18 @@ export const Board = (props: {
   };
   document.getElementsByTagName("body")![0].onkeydown = (ev) => {
     if (ev.key === "Escape") {
-      closeInfo();
-      closeSettings();
+      if (document.getElementById("info")!.style.display === "flex") {
+        closeInfo();
+      } else if (
+        document.getElementById("settings")!.style.display === "flex"
+      ) {
+        closeSettings();
+      } else if (
+        game.gameplayState === "hegemonMove" ||
+        game.gameplayState === "insurgentMove"
+      ) {
+        changeWhoMoves();
+      }
     }
     if (ev.key === "i") {
       openInfo();
@@ -820,6 +842,7 @@ export const Board = (props: {
       "rgb(36, 46, 64)";
     document.getElementById("infoButton")!.style.color = "white";
     document.getElementById("settingsButton")!.style.color = "white";
+    document.getElementById("restartGameButton")!.style.color = "white";
   } else {
     document.getElementById("statusbar")!.style.backgroundColor =
       "rgb(217, 196, 196)";
@@ -828,6 +851,7 @@ export const Board = (props: {
       "rgb(238, 77, 47)";
     document.getElementById("infoButton")!.style.color = "black";
     document.getElementById("settingsButton")!.style.color = "black";
+    document.getElementById("restartGameButton")!.style.color = "black";
   }
 
   return (

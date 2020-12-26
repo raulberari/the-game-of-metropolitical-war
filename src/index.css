@@ -96,14 +96,20 @@ code {
 
 #openInfo {
   user-select: none;
-  margin-right: 20px;
+  margin-right: 40px;
   font-size: 20px;
   color: black;
   padding-top: 1px;
 }
 #openSettings {
   user-select: none;
-  margin-left: 20px;
+  margin-right: 40px;
+  color: black;
+}
+
+#restartGame {
+  user-select: none;
+  font-size: 21px;
   color: black;
 }
 
@@ -120,6 +126,14 @@ code {
 #settingsButton {
   font-size: 22px;
   color: black;
+}
+
+#restartGameButton {
+  font-size: 21px;
+}
+#restartGameButton:hover {
+  cursor: pointer;
+  color: #999 !important;
 }
 
 #infoSettingsContainer {
